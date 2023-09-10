@@ -1,62 +1,89 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
+}
 
-  body {
+body {
     background-color: #f0f0f0;
-    
     font-family: 'Literata', serif;
-font-family: 'Manrope', sans-serif;
+    font-family: 'Manrope', sans-serif;
     text-align: center;
     padding: 20px;
-  }
+}
 
-  h1 {
+h1 {
     font-family: 'Literata', serif;
     font-weight: 900;
     font-size: 36px;
     color: #333;
     margin-bottom: 20px;
-  }
+}
 
-  img {
+img {
     max-width: 200px;
     border-radius: 25%;
     margin-bottom: 20px;
-  }
+    animation: rollIn 1s ease; 
+}
 
-  p {
+@keyframes rollIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+p {
     font-size: 18px;
     color: #555;
     margin-bottom: 10px;
-  }
+}
 
-  p[data-testid="myTrack"] {
+p[data-testid="myTrack"] {
     font-size: 20px;
     font-weight: 600;
-  }
-  
-  p[data-testid="myTrack"] span {
+}
+
+p[data-testid="myTrack"] span {
     color: #ff5733;
     margin-right: 5px;
-  }
-  
-  a[data-testid="githubURL"] {
+}
+
+a[data-testid="githubURL"] {
     display: inline-block;
     padding: 10px 20px;
+    margin-top: 10px;
     background-color: #333;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
     font-weight: 600;
-    transition: background-color 0.3s ease;
-  }
-  
-  a[data-testid="githubURL"]:hover {
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+    animation: jump 1s infinite;
+}
+
+a[data-testid="githubURL"]:hover{
+
     background-color: #ff5733;
-  }
-  
+}
+
+@keyframes jump {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
